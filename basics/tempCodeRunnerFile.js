@@ -33,7 +33,13 @@ console.log(typeof str_val); //if bool is true then it will return "true" {strin
 
 
 str_val = "1" + "2"
-console.log(str_val); // this concatenate 
+console.log(str_val); // this concatenate string "1" & "2" as "12"
 
 int_val = 1 + 2
-console.log(int_val);
+console.log(int_val); // this adds 1 + 2 and returns 3
+
+console.log("1" + 2) // this also concatenates "1" + 2 as "12"
+console.log(1 + "2") // this does the same
+console.log("1" + 2 + 3); // this will start from left and first concatenate "1" + 2 as "12" then concatenate "12" + 3 as "123"
+console.log(1 + 2 + "3"); // this will start from left and first add 1 + 2 as 3 then concatenate 3 + "3" as "33"
+
