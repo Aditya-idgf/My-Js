@@ -29,5 +29,5 @@ console.log(str_val);
 console.log(typeof str_val); 
 str_val = String(bool_val) //converts every number to string 
 console.log(str_val);
-console.log(typeof str_val); //if bool is true then it will return "true" {string}
+console.log(typeof str_val); 
 
