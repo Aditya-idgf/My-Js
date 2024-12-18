@@ -1,35 +1,44 @@
-// Js has 7 primitive datatypes: Number , String , Boolean , null , undefined , symbol {provide unique values for variables}
-let num_val = 123456
-let str_val = "Aditya"
-let bool_val = true
-let null_val = null
-let undef_val;
-let sym_val1 = Symbol(num_val)
-let sym_val2 = Symbol(num_val)
+let val = 100
+console.log(val);
+let num = new Number(123.456) // we do this to use the methods of the Number class
+console.log(num); 
 
-console.log([num_val, str_val , bool_val, null_val, undef_val , sym_val1 , sym_val2]); // even though sym_val1 & 2 have same value in print 
-console.log(sym_val1 === sym_val2); // they are not the same 
+let new_val = num.toString()
+console.log(typeof new_val);
 
-// other Reference {non - primitive} datatypes include {arrays , objects , functions}
-let arr_val = [1,2,3,4,5] // array
-console.log(arr_val) 
-console.log(typeof arr_val) // for arrays its typeof will return object
+console.log(num.toFixed(1)); // Use the `toFixed` method to round the number to 1 decimal place
+console.log(num.toPrecision(3)); // Use the `toPrecision` method to format the number to 3 significant digits
 
-let obj_val = {           // object
-    name : "Aditya",
-    age : 90
-}
-console.log(obj_val)
+let onemill = 1000000
+console.log(onemill.toLocaleString()); // output : 1,000,000
+console.log(onemill.toLocaleString('en-IN')); // output : 10,00,000
 
-let func_val = function(){// function{dont make it like this} {return type is called a object function}
-    console.log('Hello World');   
-}
-func_val()
-console.log(typeof func_val);
+console.log(Number.MAX_VALUE);
+console.log(Number.MIN_VALUE);
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(Number.MIN_SAFE_INTEGER);
 
+// js has a Math class to use math operation in it
+console.log(Math);
 
-let another_func_val = () =>{ // use functions like this
-    console.log('Hello world');
-    
-}
-another_func_val()
+// Some const values in Math class
+console.log(Math.PI); // pi value {3.14..}
+console.log(Math.E); // exp value {2.718..}
+
+// Some common methods
+console.log(Math.abs(-200)); // absolute value
+console.log(Math.round(8.7)); // round value
+console.log(Math.ceil(9.7)); // ceiling value
+console.log(Math.floor(9.2)); // floor value
+console.log(Math.min(1,45,62,14)); // returns minimum value from provied values
+console.log(Math.max(1,45,62,14)); // returns maximum value
+
+// Use of random values
+console.log(Math.random()); // random value between 0-1
+console.log(Math.floor(Math.random() * 10) + 1);
+
+// to get value in range u can do : 
+let min = 10
+let max = 20
+
+console.log(Math.floor(Math.random() * (max - min + 1)) + min);
