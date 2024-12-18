@@ -1,3 +1,5 @@
+// All the primitive datatypes are stored into stack memory and all the non primitive datatypes are stored in heap memory
+// Js is a dynamically typed language
 // Js has 7 primitive datatypes: Number , String , Boolean , null , undefined , symbol {provide unique values for variables}
 let num_val = 123456
 let str_val = "Aditya"
@@ -32,3 +34,19 @@ let another_func_val = () =>{ // use functions like this
     
 }
 another_func_val()
+
+
+let name1 = "aditya"
+let name2 = name1
+name2 = "rohan" // primitive datatypes create a copy in stack memory instead of pointing to the real space 
+console.log(name1);
+console.log(name2);
+
+let u1 = {
+    name : 'aditya',
+    id : 1243
+}
+let u2 = u1
+u2.name = "Zippy" // instead of making a new copy primitive datatypes point to the same space
+console.log(u1);
+console.log(u2);
