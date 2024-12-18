@@ -12,4 +12,3 @@ console.log(null == 0); // this returns false
 // strict comparison === is diff from == 
 console.log("1" == 1); // returns true
 console.log("1" === 1); // returns false
-
