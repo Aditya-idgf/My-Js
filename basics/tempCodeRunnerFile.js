@@ -1,44 +1,41 @@
-let val = 100
-console.log(val);
-let num = new Number(123.456) // we do this to use the methods of the Number class
-console.log(num); 
+// remember in js month starts from 0 not 1 {0 -> January}
 
-let new_val = num.toString()
-console.log(typeof new_val);
+let d = new Date() // used for retriving current data and time 
+console.log(d.toString());
+console.log(d);
 
-console.log(num.toFixed(1)); // Use the `toFixed` method to round the number to 1 decimal place
-console.log(num.toPrecision(3)); // Use the `toPrecision` method to format the number to 3 significant digits
+// Date and time in diff formates
+console.log(d.toDateString()); // {Day of the week} {Month} {Date} {Year} formate
+console.log(d.toTimeString()); // Ex: 19:08:20 GMT+0530 (India Standard Time)
+console.log(d.toISOString());
+console.log(d.toJSON());
+console.log(d.toLocaleDateString(), "\n"); // prints in MM/DD/YYYY formate
 
-let onemill = 1000000
-console.log(onemill.toLocaleString()); // output : 1,000,000
-console.log(onemill.toLocaleString('en-IN')); // output : 10,00,000
+let new_d = new Date("2024-12-19")
+console.log(new_d.toDateString(), "\n");
 
-console.log(Number.MAX_VALUE);
-console.log(Number.MIN_VALUE);
-console.log(Number.MAX_SAFE_INTEGER);
-console.log(Number.MIN_SAFE_INTEGER);
+let an_new_d = new Date(2024,11,19 , 19 , 8,20)
+console.log(an_new_d.toDateString());
+console.log(an_new_d.toLocaleString()); // MM/DD/YYYY , converts 24hrs formate to 12hrs and shows time with am or pm
+console.log(an_new_d.toTimeString());
 
-// js has a Math class to use math operation in it
-console.log(Math);
+console.log(d.getTime()); // calculate the number of millisec passed b/w 1st jan 1970 till now
+console.log(Date.now()); // does the same thing as .gettime() but we can pass gettime a specific date for ex: {go to next line}
 
-// Some const values in Math class
-console.log(Math.PI); // pi value {3.14..}
-console.log(Math.E); // exp value {2.718..}
+console.log(new_d.getTime()); // this tells millisec passed till that date
 
-// Some common methods
-console.log(Math.abs(-200)); // absolute value
-console.log(Math.round(8.7)); // round value
-console.log(Math.ceil(9.7)); // ceiling value
-console.log(Math.floor(9.2)); // floor value
-console.log(Math.min(1,45,62,14)); // returns minimum value from provied values
-console.log(Math.max(1,45,62,14)); // returns maximum value
+console.log(d.getDate());
+console.log(d.getMonth() + 1); // add +1 so that ur months start from 1 not 0 
+console.log(d.getFullYear());
 
-// Use of random values
-console.log(Math.random()); // random value between 0-1
-console.log(Math.floor(Math.random() * 10) + 1);
+console.log(d.getTimezoneOffset());
 
-// to get value in range u can do : 
-let min = 10
-let max = 20
+let z = d.toLocaleString('default' , {
+    weekday : "long",
+    dayPeriod: "long",
+    // calendar : an_new_d,
+    era : "long",
+    localeMatcher: "best fit"
+})
 
-console.log(Math.floor(Math.random() * (max - min + 1)) + min);
+console.log(z);
