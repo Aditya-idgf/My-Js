@@ -34,4 +34,34 @@ let ret_val = userLogInMessage('KingCruly') // here we get this return value
 console.log(ret_val);
 
 let new_ret = userLogInMessage() // in this case as nothing is being passed to the function it will just get undefined value 
-console.log(new_ret); // output : {x}
+console.log(new_ret); // output : GodZigga has joined the server.
+
+let user_vals = {
+    userNames : "Aditya",
+    userAmount : 199
+}
+
+let user_details = (AnyObject) => {
+    console.log(`Username is ${AnyObject.userNames} & Useramount is ${AnyObject.userAmount}.`); 
+    console.log(`Username is ${AnyObject.userName} & Useramount is ${AnyObject.userAmount}.`);  // here property name : AnyObject.userName is wrong
+        // while passing a object in function if property names are not correctly given then it we set that value as undefined 
+}
+user_details(user_vals)
+user_details({ // like this we can directly create a new object in function call 
+    userNames : "Zippy",
+    userAmount : 999 
+})
+
+// changing values
+let changeName = (obj) => {
+    obj.name = "Rahul" // if u change the passed in object , 
+                // then the real object gets changed as well {happens the same of arrays}
+    return obj
+}
+let obj1 = {
+    name : "Aditya",
+    runing : 1902
+}
+let obj2 = changeName(obj1)
+console.log(obj1);
+console.log(obj2);
