@@ -1,4 +1,6 @@
 // Js has 2 types of objects - litral and singleton
+
+// Remember objects and array are used in API's and JSON files  
 // Singleton objects are created using constructors and are unique.
 // Object.create() can also be used to create singleton objects.
 
@@ -96,3 +98,19 @@ console.log(Object.entries(user)); // returrns all the entries in a key value pa
             // [ [ 'id', 8965 ], [ 'name', 'Aditya' ], [ 'loggedin', true ] ]
 console.log(user.hasOwnProperty('loggedin')); 
 console.log(user.hasOwnProperty('isloggedin'));
+
+// Object destructuring
+
+let course = {
+    courseName : "B.Tech",
+    courseFees : 2000,
+    courseInstructor : "Aditya"
+}
+
+// console.log(course.courseInstructor); // we dont do this often
+
+let {courseInstructor} = course // we do this , Object de-structure is used for extracting values from a object
+console.log(courseInstructor);
+
+let {courseInstructor : Instructor} = course // can also change the names of the property
+console.log(Instructor);
