@@ -1,6 +1,6 @@
 // Singleton objects are created using constructors and are unique.
 // Object.create() can also be used to create singleton objects.
-
+ 
 // Literal objects are not unique and can have copies.
 const obj = {
     name: "chottaNigga",
