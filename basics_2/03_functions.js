@@ -65,3 +65,15 @@ let obj1 = {
 let obj2 = changeName(obj1)
 console.log(obj1);
 console.log(obj2);
+
+// while accessing function there might be issues function call
+
+console.log(addOne(100)); 
+function addOne(value){  // when a function is created like this we can access it anywhere in the code
+    return value + 1
+}
+
+console.log(addTwo(100)); 
+let addTwo = (value) => { // when a function is made this way , treat it as a variable that means first declaration of it is imp before use
+    return value + 2
+}
