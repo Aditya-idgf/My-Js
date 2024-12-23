@@ -11,3 +11,9 @@ obj1.username = 'Saimansays'
 obj1.greetings() // by using obj1 object here we set our current context object to it 
 // if we remove these lines then these lines then {this} will have a empty object to take as a current context 
 console.log(this);
+
+let addtwo = (n1 , n2) =>{
+    return n1 + n2 // explicit return
+}
+
+let sum = (n1 , n2) => (n1 + n2)  // for functions with one line we can do {implicit return}
