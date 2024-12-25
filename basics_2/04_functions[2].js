@@ -17,3 +17,17 @@ let addtwo = (n1 , n2) =>{
 }
 
 let sum = (n1 , n2) => (n1 + n2)  // for functions with one line we can do {implicit return}
+
+// IIFE {immediately invoked function}
+function tea() {
+    console.log("I love tea!");
+}
+tea(); // normal function and execution call
+
+// in noraml call we do chai()
+// in IIFE we dont give the function name before the second () , rather we pass the entire function itself in a ()
+
+// with IIFE we call and execute the function in one go:
+( function coffee() { // this is used to tackel the pollution of globally declared functions and variables
+    console.log("I love coffee!");
+} )();// <-- dont forget to put ; after IIFE or it might give error 
