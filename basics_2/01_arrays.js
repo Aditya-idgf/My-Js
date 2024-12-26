@@ -20,6 +20,14 @@ console.log(new_arr);
 new_arr.sort(); // sorts array
 console.log(new_arr);
 
+// a unique example
+let array = [84, 54, 8, 38, 68, 87, 46, 64];
+// without using the internal function output will be : [38, 46, 54, 64, 68, 8, 84, 87]
+array.sort((a, b) => a - b); // Sort in ascending order
+for (let i = 0; i < array.length; i++) {
+    console.log(array[i]);    
+}
+
 console.log(new_arr.includes(100)); // checks for the presence of the value
 console.log(new_arr.indexOf(100)); // returns the index of the first match
 
