@@ -77,6 +77,11 @@ arr.forEach( (val , index , array) => { // in for each loop we have 3 parameters
     // console.log(val , index , array);   // value , index , and the whole array
 } )    
 
+let newArray = arr.forEach((val)=>{
+    return val  // for each loop does return anything so newArray will be an empty array
+})
+console.log(newArray);
+
 // most useful for array of objects:
 let arr_obj = [
     {
