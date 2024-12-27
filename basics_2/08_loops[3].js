@@ -43,3 +43,24 @@ newNums = nums
     .map((num) => num - 10) // Subtract 10 from each result
     .filter((num) => num > 50); // Filter numbers greater than 50
 console.log("Chained result:", newNums);
+
+// Example 1: Reduce function to calculate the sum of an array
+const myNums = [1, 2, 3];
+
+// Using the reduce method to calculate the total sum of elements in the array
+// `acc` is the accumulator, and `curr` is the current value being processed
+const myTotal = myNums.reduce((acc, curr) => acc + curr, 0); // Initial value of accumulator is 0
+console.log("Total of myNums array:", myTotal); // Output: 6
+
+// Example 2: Reduce function to calculate the total price of items in a shopping cart
+const shoppingCart = [
+    { itemName: "JS Course", price: 2999 },
+    { itemName: "Python Course", price: 999 },
+    { itemName: "Mobile Development Course", price: 5999 },
+    { itemName: "Data Science Course", price: 12999 },
+];
+
+// Using reduce to calculate the total price of all items in the shopping cart
+// `acc` accumulates the total price, and `item.price` is added to it for each item
+const priceToPay = shoppingCart.reduce((acc, item) => acc + item.price, 0); // Initial value of acc is 0
+console.log("Total price of shopping cart:", priceToPay); // Output: 22996
