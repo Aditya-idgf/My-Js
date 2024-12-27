@@ -1,97 +1,45 @@
+const books = [
+    { title: 'Book One', genre: 'Fiction', publish: 1981, edition: 2004 },
+    { title: 'Book Two', genre: 'Non-Fiction', publish: 1992, edition: 2008 },
+    { title: 'Book Three', genre: 'History', publish: 1999, edition: 2007 },
+    { title: 'Book Four', genre: 'Non-Fiction', publish: 1989, edition: 2010 },
+    { title: 'Book Five', genre: 'Science', publish: 2009, edition: 2014 },
+    { title: 'Book Six', genre: 'Fiction', publish: 1987, edition: 2010 },
+    { title: 'Book Seven', genre: 'History', publish: 1986, edition: 1996 },
+    { title: 'Book Eight', genre: 'Science', publish: 2011, edition: 2016 },
+    { title: 'Book Nine', genre: 'Non-Fiction', publish: 1981, edition: 1989 },
+];
 
-// For of loop
-let str = "Javascript W"
-for (const itrator of str) { // this loop itrates over given entity {string, object, array} 
-                                    // taking its indiviual value as its itrator value
-    // console.log(itrator); // prints individual character of the string str
-}
-
-// we have maps in js as : 
-let map = new Map();
-map.set("IND" , "India");
-map.set("USA" , "America");
-map.set("JPN" , "Japan");
-map.set("PAK" , "Pakistan");
-// console.log(map);
-map.set("PAK","Semi-Bangladesh") // Keys are unique in map and will only update its value
-// console.log("Changed Map : " ,map);
-
-// we use for of loop to itrate in maps
-for (const itr of map) {
-    // console.log(itr); // this will print values in array of key value pair {[ 'IND', 'India' ]}
-}
-
-// we do this for better itration
-for (const [key,val] of map) {
-    // console.log(`${key} : ${val}`); // this will split the array from erlier in key 
-                                        // and value and print them individually
-}
-
-// For in loop
-const names = "Aditya"
-for (const itr in names) {  
-    // console.log(names[itr]); // similar to simple for loop but the structure is diff
-}
-
-// similar to how we use for of for maps, similarly we use for in for objects
-let obj = {
-    js : "Javascript",
-    cpp : "C++",
-    rb : "ruby",
-    py : "Python"
-}
-
-for (const itr in obj) {
-    // console.log(itr); // this prints our keys
-    // console.log(obj[itr]); // this prints our values 
-    // like this we itrate through and object using for in loop
-}
-
-let arr = ["js","cpp","py","rb"]
-for (const itrator in arr) {
-    // console.log(itrator); // itrator goes over only the indexes of the array
-    // console.log(arr[itrator]); // this way we can acess array values
-}                       // for object keys were considerd there indexes
-
-for (const itr in map) { // with for in loop we cant itrate over maps
-    console.log(itr);
-    console.log(map[itr]);
-}
-
-// For Each loop
-arr.forEach( function (val){
-    // console.log(val);
-} )
-
-arr.forEach((itr)=> {
-    // console.log(itr);
-})
-
-function printFn(item){ // here a function is created else where
-    // console.log(item);
-}
-arr.forEach(printFn) // here dont give () cuz we aint calling it here
-        // we are just passing the reference to that function in forEach loop
-
-arr.forEach( (val , index , array) => { // in for each loop we have 3 parameters
-    // console.log(val , index , array);   // value , index , and the whole array
-} )    
-
-// most useful for array of objects:
-let arr_obj = [
-    {
-        langName : "Javascript",
-        langCode : "js"
-    },
-    {
-        langName : "Python",
-        langCode : "py"
-    },
-    {
-        langName : "C++",
-        langCode : "cpp"
+// for checking condition with a for each loop we need to do it like this :
+books.forEach((val) => {  // this way we kind of filter values based on property
+    if(val.genre === 'History' && val.publish >= 1990){ // we can filter based on multiple values
+        // console.log(val);
     }
-]
-arr_obj.forEach( (itr) => {
-    console.log(itr.langName,itr.langCode);
 })
+
+// for doing this we use a filter function in arrays
+let filterdValues = books.filter((bk) => bk.genre === 'Science') // this filters and returns value to filterdValues variable
+// console.log(filterdValues);         // since it was only a line of code so we didnt add {} , if we wrote the code in {} 
+                                                // always add 'return' keyword to specify which value to return 
+
+// returns an array btw
+
+filterdValues = books.filter((bk) => {
+    return bk.genre ===  'Fiction' && bk.edition > 2005 // like this 
+})
+// console.log(filterdValues);
+
+// Map function
+// Map is similar to forEach but it returns a new array
+let nums = [1,7,6,4,2,8,9,5,3];
+
+// Corrected map function (use the correct array name: "nums")
+let newNums = nums.map((num) => num + 10); // Adding 10 to each element
+// console.log("New numbers after adding 10:", newNums);
+
+// Chaining map, filter, etc.
+newNums = nums
+    .map((num) => num * 10) // Multiply each number by 10
+    .map((num) => num - 10) // Subtract 10 from each result
+    .filter((num) => num > 50); // Filter numbers greater than 50
+console.log("Chained result:", newNums);
