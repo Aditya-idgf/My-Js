@@ -48,3 +48,37 @@ val.forEach((item) =>{ // by converting them to arrays we can change values from
     item.style.backgroundColor = '#F57C00'
     item.style.padding = '10px'
 })
+
+// Parent and child
+let parent = document.querySelector('.parent-list')
+// console.log(parent)
+
+let children = parent.children // this returns a HTML Collection
+// console.log(children)
+// console.log(children[0].innerHTML) // prints {first}
+
+// since HTML collection is a kind of array so we can do : 
+for(let i = 0 ; i < children.length ; i++){
+    console.log(children[i].innerHTML) 
+}
+
+children[1].style.color = 'red'; // style could be changed individually
+
+let firstChild = document.querySelector('.list-item') // return first element form the list
+console.log(firstChild)
+console.log(firstChild.parentElement) // return the parent of child element we given
+console.log(firstChild.nextSibling) // return the next similar element that has the same parent 
+
+console.log(parent.childNodes); // returns a NodeList of all the nodes{elements , comments , text} in side the parent
+
+// creating new element for the HTML page
+let newElement = document.createElement('p')
+newElement.id = "NEW-ELEMENT";
+newElement.style.color = "red";
+newElement.style.padding = '20px';
+// newElement.innerText = "This Is New Element";
+let text = document.createTextNode("This Is New Element");
+newElement.appendChild(text);
+
+let container = document.querySelector('.container')
+container.appendChild(newElement);
