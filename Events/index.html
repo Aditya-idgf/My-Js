@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="contain">
+        <div class="con1" id="red" onclick="alert('I am pink')"></div> <!--this in not a good way for using onclick method-->
+        <div class="con2" id="blue"></div>
+        <div class="con3" id="green"></div>
+    </div>
+</body>
+<script>
+    document.getElementById('blue').onclick = () => { // this is also not a good practice
+        alert("I am cyan");
+    } 
+
+    // Instead of all this we use eventlistners
+    document.getElementById('green').addEventListener('click',()=>{
+        alert('I am green');
+    })
+
+    document.getElementById('green').addEventListener('click', (eventObj) =>{ 
+        console.log(eventObj);  // these are called as event objects , contain info about the event, have various properties
+    })
+    // type, timestamp, defaultPrevented, target, toElement, srcElement, currentTarget, clientX,
+    // clientY, screenX, screenY, altkey, ctrlkey, shiftkey, keyCode
+
+    // propogation in eventlistenrs have false - bubbling - bottum up
+                                    // true - capturing - top down
+
+    // for eventlistenrs default value is false
+    //document.getElementById('contain').addEventListener('click', (e) => {
+    //    console.log('You clicked inside container');
+    // },false)
+    // document.getElementById('blue').addEventListener('click', (e) => {
+    //    console.log('You clicked on blue');
+    // },false)
+    // in this case the child elements event will be listend first than the parents on (bottom up)
+    
+    document.getElementById('contain').addEventListener('click', (e) => {
+        console.log('You clicked inside container');
+    },true)
+    document.getElementById('blue').addEventListener('click', (e) => {
+        console.log('You clicked on blue');
+    },true)
+    // in this case first parent will be listend then the child (top down)
+
+</script>
+</html>
