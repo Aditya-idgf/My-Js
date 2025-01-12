@@ -8,19 +8,8 @@
 </head>
 <body>
     <h1 id="heading">This Page is Slow.</h1>
-    <button id="bts">Stop</button>
+    <button id="start" class="bts">Start</button>
+    <button id="stop" class="bts">Stop</button>
 </body>
-<script>
-    
-    let sayHi = ()=>{
-        console.log('Hi Programmer.');
-    }
-    setTimeout(sayHi, 3000); // 
-    
-    // to stop the timeout we use clearTimeout()
-    document.getElementById('bts').addEventListener('click',()=>{
-        clearTimeout(sayHi);
-        console.log('sayHi was stopped.');
-    })
-</script>
+<script src="async.js"></script>
 </html>
