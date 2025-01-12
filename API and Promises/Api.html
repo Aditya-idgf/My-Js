@@ -19,7 +19,10 @@
             console.log(response); // this is the type object
             console.log(response.login); // now we can use individual properties from that object
             let body = document.querySelector('body');
-            body.innerHTML = '<img src="" alt="">'
+            body.innerHTML = `<h1>${response.login}</h1>
+                <img src="${response.avatar_url}" alt="Avatar of ${response.login}" width="150" height="150">
+                <p><a href="${response.html_url}" target="_blank">View GitHub Profile</a></p>
+                `
         }
     }
     xhr.send();
