@@ -8,4 +8,30 @@
 <body>
     
 </body>
+<script>
+    let promiseOne = new Promise((resolve , reject)=>{ // created a promise object with two outcome [resolve & reject]
+        setTimeout(()=>{
+            console.log("Hello Programmer.");
+            resolve(); // this states that the promise has been fulfilled successfully 
+        },3000);
+    });
+    promiseOne.then(()=>{ // only after the promise is resolved, .then will be executed 
+        console.log("PromiseOne Resolved");
+    })
+    
+
+    new Promise((resolve,reject)=>{ // we can also create a promise without storing it in a variable
+        setTimeout(()=>{
+            console.log('GOD programmer.');
+            reject(); // since we are stating a reject here
+        },3000)
+    })
+    .then(() => {
+        console.log("PromiseOne Resolved");
+    })
+    // instead of .then it will go to .catch so it can catch this exception 
+    .catch(() => {
+        console.log("PromiseOne Rejected");
+    });
+</script>
 </html>
