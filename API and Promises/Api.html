@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/Aditya-idgf';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            let response = JSON.parse(this.responseText);
+            console.log(this.responseText); // this is type string to convert it to a object for us to use it we do : JSON.parse()
+            console.log(response); // this is the type object
+            console.log(response.login); // now we can use individual properties from that object
+            let body = document.querySelector('body');
+            body.innerHTML = '<img src="" alt="">'
+        }
+    }
+    xhr.send();
+</script>
+</html>
