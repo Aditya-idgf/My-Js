@@ -11,10 +11,16 @@
     <button id="bts">Stop</button>
 </body>
 <script>
-    a
+    
     let sayHi = ()=>{
         console.log('Hi Programmer.');
     }
     setTimeout(sayHi, 3000); // 
+    
+    // to stop the timeout we use clearTimeout()
+    document.getElementById('bts').addEventListener('click',()=>{
+        clearTimeout(sayHi);
+        console.log('sayHi was stopped.');
+    })
 </script>
 </html>
