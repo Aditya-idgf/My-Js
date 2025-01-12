@@ -13,7 +13,7 @@
         setTimeout(()=>{
             console.log("Hello Programmer.");
             resolve(); // this states that the promise has been fulfilled successfully 
-        },3000);
+        },2000);
     });
     promiseOne.then(()=>{ // only after the promise is resolved, .then will be executed 
         console.log("PromiseOne Resolved");
@@ -22,16 +22,57 @@
 
     new Promise((resolve,reject)=>{ // we can also create a promise without storing it in a variable
         setTimeout(()=>{
-            console.log('GOD programmer.');
-            reject(); // since we are stating a reject here
+            let error = true;
+            if(!error){
+                resolve();
+            } else {
+                reject(); // rejecting a promise will cause it to throw an exception
+            }
         },3000)
     })
     .then(() => {
-        console.log("PromiseOne Resolved");
+        console.log("PromiseTwo Resolved Successfully!");
     })
-    // instead of .then it will go to .catch so it can catch this exception 
+    // the execption will be caught by .catch to be fixed
     .catch(() => {
-        console.log("PromiseOne Rejected");
+        console.log("PromiseTwo Rejected Successfully!");
     });
+
+    // we can pass values from resolve and reject to .then and .catch 
+    let promiseThree = new Promise((resolve , reject)=>{
+        setTimeout(()=>{
+            console.log("My Third promise.");
+            resolve('Promise Resolved successfully.');
+        },5000);
+    })
+    promiseThree.then((data)=>{
+        console.log(data);
+    })
+
+
+    let userData = {
+        username : 'Aditya-idgf',
+        BlockId : '12$_1112',
+        Timeline : 4845
+    };
+    let promiseFour = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            let error = true;
+            if(!error){
+                resolve(userData);
+            } else {
+                reject('SOME ERROR OCCORED AT OUR END!');
+            }
+        },10000);
+    })
+    promiseFour.then((userVals)=>{ // we can also do chaining of .then and .catch to do some specific tasks with our code
+        console.log(`UserData found : ${userVals}`);
+        return userVals.username;
+    }).then((username)=>{
+        console.log(`UserName of User is : ${username}`);
+    }).catch((vals)=>{
+        console.error(vals);
+    })
+
 </script>
 </html>
