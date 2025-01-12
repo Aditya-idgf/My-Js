@@ -16,9 +16,9 @@ body{
     height: 100vh;
 }
 
-#bts{
+.bts{
     margin-top: 30px;
-    font-size: 30px;
+    font-size: 20px;
     padding: 10px;
     border-radius: 10px;
 }
