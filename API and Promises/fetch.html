@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+<body>
+</body>
+<script>
+    // fetch api was a upgrade to XMLHttpsRequest() providing a better network request than its predecessor 
+    // fetch() is method that sends a request over the network to return a promise over which we can decide to resolve or reject the request
+    // fetch() gives error only when a network error is encountered.
+    // for HTTP errors like 404, they are always counted as response and are not rejected , for this .then() handler must check reponse.status & reponse.ok
+
+    fetch('https://api.github.com/users/Aditya-idgf')
+    .then((response)=>{
+        return response.json();
+    })
+    .then((data)=>{
+        console.log(data);
+    })
+    .catch((err)=>{
+        console.error(err);
+    })
+</script>
+</html>
